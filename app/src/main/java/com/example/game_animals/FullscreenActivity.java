@@ -3,6 +3,7 @@ package com.example.game_animals;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -189,6 +190,8 @@ public class FullscreenActivity extends AppCompatActivity {
     };
 
     public void startGame(View view){
-        ;
+        Intent intent = new Intent(FullscreenActivity.this, GameActivity.class);
+        startActivity(intent);
+        FullscreenActivity.this.finish();
     }
 }
