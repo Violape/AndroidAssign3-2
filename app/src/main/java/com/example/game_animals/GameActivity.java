@@ -1,8 +1,6 @@
 package com.example.game_animals;
 
 import android.annotation.SuppressLint;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -14,7 +12,7 @@ import android.view.View;
  * An example full-screen activity that shows and hides the system UI (i.e.
  * status bar and navigation/system bar) with user interaction.
  */
-public class FullscreenActivity extends AppCompatActivity {
+public class GameActivity extends AppCompatActivity {
     /**
      * Whether or not the system UI should be auto-hidden after
      * {@link #AUTO_HIDE_DELAY_MILLIS} milliseconds.
@@ -89,7 +87,7 @@ public class FullscreenActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.activity_fullscreen);
+        setContentView(R.layout.activity_game);
 
         mVisible = true;
         mControlsView = findViewById(R.id.fullscreen_content_controls);
@@ -161,34 +159,5 @@ public class FullscreenActivity extends AppCompatActivity {
     private void delayedHide(int delayMillis) {
         mHideHandler.removeCallbacks(mHideRunnable);
         mHideHandler.postDelayed(mHideRunnable, delayMillis);
-    }
-
-    public void quitGame(View view){
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage("Are you sure to quit this game?");
-        builder.setPositiveButton("Yes",click1);
-        builder.setNegativeButton("No",click2);
-        AlertDialog alert1 = builder.create();
-        alert1.show();
-    }
-
-    private DialogInterface.OnClickListener click1=new DialogInterface.OnClickListener()
-    {
-        @Override
-        public void onClick(DialogInterface arg0,int arg1) {
-            android.os.Process.killProcess(android.os.Process.myPid());
-        }
-    };
-
-    private DialogInterface.OnClickListener click2=new DialogInterface.OnClickListener()
-    {
-        @Override
-        public void onClick(DialogInterface arg0,int arg1) {
-            arg0.cancel();
-        }
-    };
-
-    public void startGame(View view){
-        ;
     }
 }
