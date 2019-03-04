@@ -11,6 +11,9 @@ import android.view.View;
 import android.widget.ImageView;
 
 import java.util.Random;
+import java.util.Timer;
+import java.util.TimerTask;
+
 import static java.util.Arrays.sort;
 
 /**
@@ -18,6 +21,8 @@ import static java.util.Arrays.sort;
  * status bar and navigation/system bar) with user interaction.
  */
 public class GameActivity extends AppCompatActivity {
+    int [] init = new int[30];
+    int [] arrf =new int[30];
     /**
      * Whether or not the system UI should be auto-hidden after
      * {@link #AUTO_HIDE_DELAY_MILLIS} milliseconds.
@@ -111,30 +116,6 @@ public class GameActivity extends AppCompatActivity {
         // operations to prevent the jarring behavior of controls going away
         // while interacting with the UI.
         findViewById(R.id.dummy_button).setOnTouchListener(mDelayHideTouchListener);
-        int [] arr = new int[30];
-        for (int i=0; i<30; i++){
-            arr[i]= i;
-        }
-        int [] arr2 =new int[arr.length];
-        int count = arr.length;
-        int cbRandCount = 0;
-        int cbPosition = 0;
-        int k = 0;
-        do {
-            Random rand = new Random();
-            int r = count - cbRandCount;
-            cbPosition = rand.nextInt(r);
-            arr2[k++] = arr[cbPosition];
-            cbRandCount++;
-            arr[cbPosition] = arr[r - 1];
-        } while (cbRandCount < count);
-        for(int i=0; i<30; i++){
-            String targetbox = "imageView" + String.valueOf(Integer.valueOf(i / 5)) + String.valueOf(i % 5);
-            int targetid = getResources().getIdentifier(targetbox, "id", getPackageName());
-            String sourceimg = "icon" + String.valueOf(Integer.valueOf(arr2[i]/2+1));
-            int sourceid = getResources().getIdentifier(sourceimg, "drawable", getPackageName());
-            ((ImageView)(findViewById(targetid))).setImageResource(sourceid);
-        }
     }
 
     @Override
@@ -188,5 +169,42 @@ public class GameActivity extends AppCompatActivity {
     private void delayedHide(int delayMillis) {
         mHideHandler.removeCallbacks(mHideRunnable);
         mHideHandler.postDelayed(mHideRunnable, delayMillis);
+    }
+
+    public void startGame(View view){
+        for (int i=0; i<30; i++){
+            init[i]= i;
+        }
+        int count = init.length;
+        int cbRandCount = 0;
+        int cbPosition = 0;
+        int k = 0;
+        do {
+            Random rand = new Random();
+            int r = count - cbRandCount;
+            cbPosition = rand.nextInt(r);
+            arrf[k++] = init[cbPosition];
+            cbRandCount++;
+            init[cbPosition] = init[r - 1];
+        } while (cbRandCount < count);
+        for(int i=0; i<30; i++){
+            String targetbox = "imageView" + String.valueOf(Integer.valueOf(i / 5)) + String.valueOf(i % 5);
+            int targetid = getResources().getIdentifier(targetbox, "id", getPackageName());
+            String sourceimg = "icon" + String.valueOf(Integer.valueOf(arrf[i]/2+1));
+            int sourceid = getResources().getIdentifier(sourceimg, "drawable", getPackageName());
+            ((ImageView)(findViewById(targetid))).setImageResource(sourceid);
+        }
+        TimerTask task = new TimerTask() {
+            @Override
+            public void run() {
+                for (int i = 0; i < 30; i++) {
+                    String targetbox = "imageView" + String.valueOf(Integer.valueOf(i / 5)) + String.valueOf(i % 5);
+                    int targetid = getResources().getIdentifier(targetbox, "id", getPackageName());
+                    ((ImageView) (findViewById(targetid))).setImageResource(R.drawable.icon00);
+                }
+            }
+        };
+        Timer timer = new Timer();
+        timer.schedule(task, 3000);
     }
 }
