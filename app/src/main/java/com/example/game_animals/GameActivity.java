@@ -1,12 +1,17 @@
 package com.example.game_animals;
 
 import android.annotation.SuppressLint;
+import android.content.res.Resources;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.ImageView;
+
+import java.util.Random;
+import static java.util.Arrays.sort;
 
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
@@ -106,6 +111,30 @@ public class GameActivity extends AppCompatActivity {
         // operations to prevent the jarring behavior of controls going away
         // while interacting with the UI.
         findViewById(R.id.dummy_button).setOnTouchListener(mDelayHideTouchListener);
+        int [] arr = new int[30];
+        for (int i=0; i<30; i++){
+            arr[i]= i;
+        }
+        int [] arr2 =new int[arr.length];
+        int count = arr.length;
+        int cbRandCount = 0;
+        int cbPosition = 0;
+        int k = 0;
+        do {
+            Random rand = new Random();
+            int r = count - cbRandCount;
+            cbPosition = rand.nextInt(r);
+            arr2[k++] = arr[cbPosition];
+            cbRandCount++;
+            arr[cbPosition] = arr[r - 1];
+        } while (cbRandCount < count);
+        for(int i=0; i<30; i++){
+            String targetbox = "imageView" + String.valueOf(Integer.valueOf(i / 5)) + String.valueOf(i % 5);
+            int targetid = getResources().getIdentifier(targetbox, "id", getPackageName());
+            String sourceimg = "icon" + String.valueOf(Integer.valueOf(arr2[i]/2+1));
+            int sourceid = getResources().getIdentifier(sourceimg, "drawable", getPackageName());
+            ((ImageView)(findViewById(targetid))).setImageResource(sourceid);
+        }
     }
 
     @Override
