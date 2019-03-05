@@ -2,13 +2,16 @@ package com.example.game_animals;
 
 import android.annotation.SuppressLint;
 import android.content.res.Resources;
+import android.media.Image;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import java.util.Random;
 import java.util.Timer;
@@ -22,7 +25,8 @@ import static java.util.Arrays.sort;
  */
 public class GameActivity extends AppCompatActivity {
     int [] init = new int[30];
-    int [] arrf =new int[30];
+    int [] arrf = new int[30];
+    int match = -1;
     /**
      * Whether or not the system UI should be auto-hidden after
      * {@link #AUTO_HIDE_DELAY_MILLIS} milliseconds.
@@ -116,6 +120,50 @@ public class GameActivity extends AppCompatActivity {
         // operations to prevent the jarring behavior of controls going away
         // while interacting with the UI.
         findViewById(R.id.dummy_button).setOnTouchListener(mDelayHideTouchListener);
+
+        for(int i=0; i<30; i++){
+            init[i] = 1;
+        }
+
+        findViewById(R.id.imageView00).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(init[0] == 1){
+                    ;
+                }
+                else{
+                    String sourceimg = "icon" + String.valueOf(Integer.valueOf(arrf[0]));
+                    int sourceid = getResources().getIdentifier(sourceimg, "drawable", getPackageName());
+                    ((ImageView)(findViewById(R.id.imageView00))).setImageResource(sourceid);
+                    init[0] = 1;
+                    if(match == -1){
+                        match = 0;
+                    }
+                    else {
+                        final boolean pair = (arrf[0] == arrf[match]);
+                        match = -1;
+                        final Handler handler = new Handler();
+                        Runnable runnable=new Runnable(){
+                            @Override
+                            public void run() {
+                                if(pair){
+                                    addscore();
+                                }
+                                else {
+                                    String targetbox = "imageView" + String.valueOf(Integer.valueOf(match / 5)) + String.valueOf(match % 5);
+                                    int targetid = getResources().getIdentifier(targetbox, "id", getPackageName());
+                                    ((ImageView) (findViewById(targetid))).setImageResource(R.drawable.icon00);
+                                    ((ImageView) (findViewById(R.id.imageView00))).setImageResource(R.drawable.icon00);
+                                    init[match] = 0;
+                                    init[0] = 0;
+                                }
+                            }
+                        };
+                        handler.postDelayed(runnable, 1000);
+                    }
+                }
+            }
+        });
     }
 
     @Override
@@ -188,13 +236,18 @@ public class GameActivity extends AppCompatActivity {
             init[cbPosition] = init[r - 1];
         } while (cbRandCount < count);
         for(int i=0; i<30; i++){
+            init[i] = 1;
+        }
+        for(int i=0; i<30; i++){
             String targetbox = "imageView" + String.valueOf(Integer.valueOf(i / 5)) + String.valueOf(i % 5);
             int targetid = getResources().getIdentifier(targetbox, "id", getPackageName());
-            String sourceimg = "icon" + String.valueOf(Integer.valueOf(arrf[i]/2+1));
+            arrf[i] = (int)(arrf[i]/2)+1;
+            String sourceimg = "icon" + String.valueOf(arrf[i]);
             int sourceid = getResources().getIdentifier(sourceimg, "drawable", getPackageName());
             ((ImageView)(findViewById(targetid))).setImageResource(sourceid);
         }
-        TimerTask task = new TimerTask() {
+        final Handler handler = new Handler();
+        Runnable runnable=new Runnable(){
             @Override
             public void run() {
                 for (int i = 0; i < 30; i++) {
@@ -202,9 +255,20 @@ public class GameActivity extends AppCompatActivity {
                     int targetid = getResources().getIdentifier(targetbox, "id", getPackageName());
                     ((ImageView) (findViewById(targetid))).setImageResource(R.drawable.icon00);
                 }
+                for(int i=0; i<30; i++){
+                    init[i] = 0;
+                }
             }
         };
-        Timer timer = new Timer();
-        timer.schedule(task, 3000);
+        handler.postDelayed(runnable, 3000);
+    }
+
+    public void addscore(){
+        TextView now = findViewById(R.id.score);
+        int score = Integer.valueOf(String.valueOf(now.getText()));
+        ((TextView) findViewById(R.id.score)).setText(String.valueOf(score + 1));
+        if(score == 14){
+            ;
+        }
     }
 }
