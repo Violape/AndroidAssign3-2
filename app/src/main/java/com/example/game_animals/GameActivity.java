@@ -1,6 +1,7 @@
 package com.example.game_animals;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.media.Image;
 import android.support.v7.app.ActionBar;
@@ -140,7 +141,6 @@ public class GameActivity extends AppCompatActivity {
                     }
                     else {
                         final boolean pair = (arrf[0] == arrf[match]);
-                        match = -1;
                         final Handler handler = new Handler();
                         Runnable runnable=new Runnable(){
                             @Override
@@ -156,9 +156,10 @@ public class GameActivity extends AppCompatActivity {
                                     init[match] = 0;
                                     init[0] = 0;
                                 }
+                                match = -1;
                             }
                         };
-                        handler.postDelayed(runnable, 1000);
+                        handler.postDelayed(runnable, 200);
                     }
                 }
             }
@@ -179,7 +180,6 @@ public class GameActivity extends AppCompatActivity {
                     }
                     else {
                         final boolean pair = (arrf[1] == arrf[match]);
-                        match = -1;
                         final Handler handler = new Handler();
                         Runnable runnable=new Runnable(){
                             @Override
@@ -195,9 +195,10 @@ public class GameActivity extends AppCompatActivity {
                                     init[match] = 0;
                                     init[1] = 0;
                                 }
+                                match = -1;
                             }
                         };
-                        handler.postDelayed(runnable, 1000);
+                        handler.postDelayed(runnable, 200);
                     }
                 }
             }
@@ -218,7 +219,6 @@ public class GameActivity extends AppCompatActivity {
                     }
                     else {
                         final boolean pair = (arrf[2] == arrf[match]);
-                        match = -1;
                         final Handler handler = new Handler();
                         Runnable runnable=new Runnable(){
                             @Override
@@ -234,9 +234,10 @@ public class GameActivity extends AppCompatActivity {
                                     init[match] = 0;
                                     init[2] = 0;
                                 }
+                                match = -1;
                             }
                         };
-                        handler.postDelayed(runnable, 1000);
+                        handler.postDelayed(runnable, 200);
                     }
                 }
             }
@@ -257,7 +258,6 @@ public class GameActivity extends AppCompatActivity {
                     }
                     else {
                         final boolean pair = (arrf[3] == arrf[match]);
-                        match = -1;
                         final Handler handler = new Handler();
                         Runnable runnable=new Runnable(){
                             @Override
@@ -273,9 +273,10 @@ public class GameActivity extends AppCompatActivity {
                                     init[match] = 0;
                                     init[3] = 0;
                                 }
+                                match = -1;
                             }
                         };
-                        handler.postDelayed(runnable, 1000);
+                        handler.postDelayed(runnable, 200);
                     }
                 }
             }
@@ -296,7 +297,6 @@ public class GameActivity extends AppCompatActivity {
                     }
                     else {
                         final boolean pair = (arrf[4] == arrf[match]);
-                        match = -1;
                         final Handler handler = new Handler();
                         Runnable runnable=new Runnable(){
                             @Override
@@ -312,9 +312,10 @@ public class GameActivity extends AppCompatActivity {
                                     init[match] = 0;
                                     init[4] = 0;
                                 }
+                                match = -1;
                             }
                         };
-                        handler.postDelayed(runnable, 1000);
+                        handler.postDelayed(runnable, 200);
                     }
                 }
             }
@@ -335,7 +336,6 @@ public class GameActivity extends AppCompatActivity {
                     }
                     else {
                         final boolean pair = (arrf[5] == arrf[match]);
-                        match = -1;
                         final Handler handler = new Handler();
                         Runnable runnable=new Runnable(){
                             @Override
@@ -351,9 +351,10 @@ public class GameActivity extends AppCompatActivity {
                                     init[match] = 0;
                                     init[5] = 0;
                                 }
+                                match = -1;
                             }
                         };
-                        handler.postDelayed(runnable, 1000);
+                        handler.postDelayed(runnable, 200);
                     }
                 }
             }
@@ -374,7 +375,6 @@ public class GameActivity extends AppCompatActivity {
                     }
                     else {
                         final boolean pair = (arrf[6] == arrf[match]);
-                        match = -1;
                         final Handler handler = new Handler();
                         Runnable runnable=new Runnable(){
                             @Override
@@ -390,9 +390,10 @@ public class GameActivity extends AppCompatActivity {
                                     init[match] = 0;
                                     init[6] = 0;
                                 }
+                                match = -1;
                             }
                         };
-                        handler.postDelayed(runnable, 1000);
+                        handler.postDelayed(runnable, 200);
                     }
                 }
             }
@@ -413,7 +414,6 @@ public class GameActivity extends AppCompatActivity {
                     }
                     else {
                         final boolean pair = (arrf[7] == arrf[match]);
-                        match = -1;
                         final Handler handler = new Handler();
                         Runnable runnable=new Runnable(){
                             @Override
@@ -429,9 +429,10 @@ public class GameActivity extends AppCompatActivity {
                                     init[match] = 0;
                                     init[7] = 0;
                                 }
+                                match = -1;
                             }
                         };
-                        handler.postDelayed(runnable, 1000);
+                        handler.postDelayed(runnable, 200);
                     }
                 }
             }
@@ -452,7 +453,6 @@ public class GameActivity extends AppCompatActivity {
                     }
                     else {
                         final boolean pair = (arrf[8] == arrf[match]);
-                        match = -1;
                         final Handler handler = new Handler();
                         Runnable runnable=new Runnable(){
                             @Override
@@ -468,9 +468,10 @@ public class GameActivity extends AppCompatActivity {
                                     init[match] = 0;
                                     init[8] = 0;
                                 }
+                                match = -1;
                             }
                         };
-                        handler.postDelayed(runnable, 1000);
+                        handler.postDelayed(runnable, 200);
                     }
                 }
             }
@@ -491,7 +492,6 @@ public class GameActivity extends AppCompatActivity {
                     }
                     else {
                         final boolean pair = (arrf[9] == arrf[match]);
-                        match = -1;
                         final Handler handler = new Handler();
                         Runnable runnable=new Runnable(){
                             @Override
@@ -507,9 +507,10 @@ public class GameActivity extends AppCompatActivity {
                                     init[match] = 0;
                                     init[9] = 0;
                                 }
+                                match = -1;
                             }
                         };
-                        handler.postDelayed(runnable, 1000);
+                        handler.postDelayed(runnable, 200);
                     }
                 }
             }
@@ -530,7 +531,6 @@ public class GameActivity extends AppCompatActivity {
                     }
                     else {
                         final boolean pair = (arrf[10] == arrf[match]);
-                        match = -1;
                         final Handler handler = new Handler();
                         Runnable runnable=new Runnable(){
                             @Override
@@ -546,9 +546,10 @@ public class GameActivity extends AppCompatActivity {
                                     init[match] = 0;
                                     init[10] = 0;
                                 }
+                                match = -1;
                             }
                         };
-                        handler.postDelayed(runnable, 1000);
+                        handler.postDelayed(runnable, 200);
                     }
                 }
             }
@@ -569,7 +570,6 @@ public class GameActivity extends AppCompatActivity {
                     }
                     else {
                         final boolean pair = (arrf[11] == arrf[match]);
-                        match = -1;
                         final Handler handler = new Handler();
                         Runnable runnable=new Runnable(){
                             @Override
@@ -585,9 +585,10 @@ public class GameActivity extends AppCompatActivity {
                                     init[match] = 0;
                                     init[11] = 0;
                                 }
+                                match = -1;
                             }
                         };
-                        handler.postDelayed(runnable, 1000);
+                        handler.postDelayed(runnable, 200);
                     }
                 }
             }
@@ -608,7 +609,6 @@ public class GameActivity extends AppCompatActivity {
                     }
                     else {
                         final boolean pair = (arrf[12] == arrf[match]);
-                        match = -1;
                         final Handler handler = new Handler();
                         Runnable runnable=new Runnable(){
                             @Override
@@ -624,9 +624,10 @@ public class GameActivity extends AppCompatActivity {
                                     init[match] = 0;
                                     init[12] = 0;
                                 }
+                                match = -1;
                             }
                         };
-                        handler.postDelayed(runnable, 1000);
+                        handler.postDelayed(runnable, 200);
                     }
                 }
             }
@@ -647,7 +648,6 @@ public class GameActivity extends AppCompatActivity {
                     }
                     else {
                         final boolean pair = (arrf[13] == arrf[match]);
-                        match = -1;
                         final Handler handler = new Handler();
                         Runnable runnable=new Runnable(){
                             @Override
@@ -663,9 +663,10 @@ public class GameActivity extends AppCompatActivity {
                                     init[match] = 0;
                                     init[13] = 0;
                                 }
+                                match = -1;
                             }
                         };
-                        handler.postDelayed(runnable, 1000);
+                        handler.postDelayed(runnable, 200);
                     }
                 }
             }
@@ -686,7 +687,6 @@ public class GameActivity extends AppCompatActivity {
                     }
                     else {
                         final boolean pair = (arrf[14] == arrf[match]);
-                        match = -1;
                         final Handler handler = new Handler();
                         Runnable runnable=new Runnable(){
                             @Override
@@ -702,9 +702,10 @@ public class GameActivity extends AppCompatActivity {
                                     init[match] = 0;
                                     init[14] = 0;
                                 }
+                                match = -1;
                             }
                         };
-                        handler.postDelayed(runnable, 1000);
+                        handler.postDelayed(runnable, 200);
                     }
                 }
             }
@@ -725,7 +726,6 @@ public class GameActivity extends AppCompatActivity {
                     }
                     else {
                         final boolean pair = (arrf[15] == arrf[match]);
-                        match = -1;
                         final Handler handler = new Handler();
                         Runnable runnable=new Runnable(){
                             @Override
@@ -741,9 +741,10 @@ public class GameActivity extends AppCompatActivity {
                                     init[match] = 0;
                                     init[15] = 0;
                                 }
+                                match = -1;
                             }
                         };
-                        handler.postDelayed(runnable, 1000);
+                        handler.postDelayed(runnable, 200);
                     }
                 }
             }
@@ -764,7 +765,6 @@ public class GameActivity extends AppCompatActivity {
                     }
                     else {
                         final boolean pair = (arrf[16] == arrf[match]);
-                        match = -1;
                         final Handler handler = new Handler();
                         Runnable runnable=new Runnable(){
                             @Override
@@ -780,9 +780,10 @@ public class GameActivity extends AppCompatActivity {
                                     init[match] = 0;
                                     init[16] = 0;
                                 }
+                                match = -1;
                             }
                         };
-                        handler.postDelayed(runnable, 1000);
+                        handler.postDelayed(runnable, 200);
                     }
                 }
             }
@@ -803,7 +804,6 @@ public class GameActivity extends AppCompatActivity {
                     }
                     else {
                         final boolean pair = (arrf[17] == arrf[match]);
-                        match = -1;
                         final Handler handler = new Handler();
                         Runnable runnable=new Runnable(){
                             @Override
@@ -819,9 +819,10 @@ public class GameActivity extends AppCompatActivity {
                                     init[match] = 0;
                                     init[17] = 0;
                                 }
+                                match = -1;
                             }
                         };
-                        handler.postDelayed(runnable, 1000);
+                        handler.postDelayed(runnable, 200);
                     }
                 }
             }
@@ -842,7 +843,6 @@ public class GameActivity extends AppCompatActivity {
                     }
                     else {
                         final boolean pair = (arrf[18] == arrf[match]);
-                        match = -1;
                         final Handler handler = new Handler();
                         Runnable runnable=new Runnable(){
                             @Override
@@ -858,9 +858,10 @@ public class GameActivity extends AppCompatActivity {
                                     init[match] = 0;
                                     init[18] = 0;
                                 }
+                                match = -1;
                             }
                         };
-                        handler.postDelayed(runnable, 1000);
+                        handler.postDelayed(runnable, 200);
                     }
                 }
             }
@@ -881,7 +882,6 @@ public class GameActivity extends AppCompatActivity {
                     }
                     else {
                         final boolean pair = (arrf[19] == arrf[match]);
-                        match = -1;
                         final Handler handler = new Handler();
                         Runnable runnable=new Runnable(){
                             @Override
@@ -897,9 +897,10 @@ public class GameActivity extends AppCompatActivity {
                                     init[match] = 0;
                                     init[19] = 0;
                                 }
+                                match = -1;
                             }
                         };
-                        handler.postDelayed(runnable, 1000);
+                        handler.postDelayed(runnable, 200);
                     }
                 }
             }
@@ -920,7 +921,6 @@ public class GameActivity extends AppCompatActivity {
                     }
                     else {
                         final boolean pair = (arrf[20] == arrf[match]);
-                        match = -1;
                         final Handler handler = new Handler();
                         Runnable runnable=new Runnable(){
                             @Override
@@ -936,9 +936,10 @@ public class GameActivity extends AppCompatActivity {
                                     init[match] = 0;
                                     init[20] = 0;
                                 }
+                                match = -1;
                             }
                         };
-                        handler.postDelayed(runnable, 1000);
+                        handler.postDelayed(runnable, 200);
                     }
                 }
             }
@@ -959,7 +960,6 @@ public class GameActivity extends AppCompatActivity {
                     }
                     else {
                         final boolean pair = (arrf[21] == arrf[match]);
-                        match = -1;
                         final Handler handler = new Handler();
                         Runnable runnable=new Runnable(){
                             @Override
@@ -975,9 +975,10 @@ public class GameActivity extends AppCompatActivity {
                                     init[match] = 0;
                                     init[21] = 0;
                                 }
+                                match = -1;
                             }
                         };
-                        handler.postDelayed(runnable, 1000);
+                        handler.postDelayed(runnable, 200);
                     }
                 }
             }
@@ -998,7 +999,6 @@ public class GameActivity extends AppCompatActivity {
                     }
                     else {
                         final boolean pair = (arrf[22] == arrf[match]);
-                        match = -1;
                         final Handler handler = new Handler();
                         Runnable runnable=new Runnable(){
                             @Override
@@ -1014,9 +1014,10 @@ public class GameActivity extends AppCompatActivity {
                                     init[match] = 0;
                                     init[22] = 0;
                                 }
+                                match = -1;
                             }
                         };
-                        handler.postDelayed(runnable, 1000);
+                        handler.postDelayed(runnable, 200);
                     }
                 }
             }
@@ -1037,7 +1038,6 @@ public class GameActivity extends AppCompatActivity {
                     }
                     else {
                         final boolean pair = (arrf[23] == arrf[match]);
-                        match = -1;
                         final Handler handler = new Handler();
                         Runnable runnable=new Runnable(){
                             @Override
@@ -1053,9 +1053,10 @@ public class GameActivity extends AppCompatActivity {
                                     init[match] = 0;
                                     init[23] = 0;
                                 }
+                                match = -1;
                             }
                         };
-                        handler.postDelayed(runnable, 1000);
+                        handler.postDelayed(runnable, 200);
                     }
                 }
             }
@@ -1076,7 +1077,6 @@ public class GameActivity extends AppCompatActivity {
                     }
                     else {
                         final boolean pair = (arrf[24] == arrf[match]);
-                        match = -1;
                         final Handler handler = new Handler();
                         Runnable runnable=new Runnable(){
                             @Override
@@ -1092,9 +1092,10 @@ public class GameActivity extends AppCompatActivity {
                                     init[match] = 0;
                                     init[24] = 0;
                                 }
+                                match = -1;
                             }
                         };
-                        handler.postDelayed(runnable, 1000);
+                        handler.postDelayed(runnable, 200);
                     }
                 }
             }
@@ -1115,7 +1116,6 @@ public class GameActivity extends AppCompatActivity {
                     }
                     else {
                         final boolean pair = (arrf[25] == arrf[match]);
-                        match = -1;
                         final Handler handler = new Handler();
                         Runnable runnable=new Runnable(){
                             @Override
@@ -1131,9 +1131,10 @@ public class GameActivity extends AppCompatActivity {
                                     init[match] = 0;
                                     init[25] = 0;
                                 }
+                                match = -1;
                             }
                         };
-                        handler.postDelayed(runnable, 1000);
+                        handler.postDelayed(runnable, 200);
                     }
                 }
             }
@@ -1154,7 +1155,6 @@ public class GameActivity extends AppCompatActivity {
                     }
                     else {
                         final boolean pair = (arrf[26] == arrf[match]);
-                        match = -1;
                         final Handler handler = new Handler();
                         Runnable runnable=new Runnable(){
                             @Override
@@ -1170,9 +1170,10 @@ public class GameActivity extends AppCompatActivity {
                                     init[match] = 0;
                                     init[26] = 0;
                                 }
+                                match = -1;
                             }
                         };
-                        handler.postDelayed(runnable, 1000);
+                        handler.postDelayed(runnable, 200);
                     }
                 }
             }
@@ -1193,7 +1194,6 @@ public class GameActivity extends AppCompatActivity {
                     }
                     else {
                         final boolean pair = (arrf[27] == arrf[match]);
-                        match = -1;
                         final Handler handler = new Handler();
                         Runnable runnable=new Runnable(){
                             @Override
@@ -1209,9 +1209,10 @@ public class GameActivity extends AppCompatActivity {
                                     init[match] = 0;
                                     init[27] = 0;
                                 }
+                                match = -1;
                             }
                         };
-                        handler.postDelayed(runnable, 1000);
+                        handler.postDelayed(runnable, 200);
                     }
                 }
             }
@@ -1232,7 +1233,6 @@ public class GameActivity extends AppCompatActivity {
                     }
                     else {
                         final boolean pair = (arrf[28] == arrf[match]);
-                        match = -1;
                         final Handler handler = new Handler();
                         Runnable runnable=new Runnable(){
                             @Override
@@ -1248,9 +1248,10 @@ public class GameActivity extends AppCompatActivity {
                                     init[match] = 0;
                                     init[28] = 0;
                                 }
+                                match = -1;
                             }
                         };
-                        handler.postDelayed(runnable, 1000);
+                        handler.postDelayed(runnable, 200);
                     }
                 }
             }
@@ -1271,7 +1272,6 @@ public class GameActivity extends AppCompatActivity {
                     }
                     else {
                         final boolean pair = (arrf[29] == arrf[match]);
-                        match = -1;
                         final Handler handler = new Handler();
                         Runnable runnable=new Runnable(){
                             @Override
@@ -1287,9 +1287,10 @@ public class GameActivity extends AppCompatActivity {
                                     init[match] = 0;
                                     init[29] = 0;
                                 }
+                                match = -1;
                             }
                         };
-                        handler.postDelayed(runnable, 1000);
+                        handler.postDelayed(runnable, 200);
                     }
                 }
             }
@@ -1398,8 +1399,16 @@ public class GameActivity extends AppCompatActivity {
         TextView now = findViewById(R.id.score);
         int score = Integer.valueOf(String.valueOf(now.getText()));
         ((TextView) findViewById(R.id.score)).setText(String.valueOf(score + 1));
-        if(score == 14){
-            ;
+        if(score >= 14){
+            Intent intent = new Intent(GameActivity.this, YouWinActivity.class);
+            startActivity(intent);
+            GameActivity.this.finish();
         }
+    }
+
+    public void returnGame(View view){
+        Intent intent = new Intent(GameActivity.this, FullscreenActivity.class);
+        startActivity(intent);
+        GameActivity.this.finish();
     }
 }
